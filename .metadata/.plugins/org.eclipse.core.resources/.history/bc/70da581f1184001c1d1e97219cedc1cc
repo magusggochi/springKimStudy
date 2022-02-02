@@ -1,0 +1,27 @@
+package hello.hellospring.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import hello.hellospring.domain.Board;
+
+public class MemoryBoardRepository implements BoardRepository {
+
+	@Override
+	public Board save(Board board) {
+		return null;
+	}
+
+	@Override
+	public Optional<Board> boardById(int id) {
+		return null;
+	}
+
+	@Override
+	public List<Board> boardListAll() {
+		return null;
+	}
+
+	
+	
+}

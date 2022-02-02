@@ -1,0 +1,10 @@
+package hello.hellospring.repository;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class MemoryBoardRepositoryTest {
+
+
+}

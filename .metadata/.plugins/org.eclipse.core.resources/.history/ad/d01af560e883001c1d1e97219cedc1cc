@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+${data}
+	<h2>${data}</h2>
+
+</body>
+</html>

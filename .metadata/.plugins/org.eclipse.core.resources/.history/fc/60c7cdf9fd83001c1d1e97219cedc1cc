@@ -1,0 +1,64 @@
+package hello.hellospring.service;
+
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
+
+import hello.hellospring.domain.Member;
+import hello.hellospring.repository.MemoryMemberRepository;
+
+class MemberServiceTest {
+
+	MemberService memberService = new MemberService();
+	MemoryMemberRepository repository = new MemoryMemberRepository();
+
+	@AfterEach //각 수행 끝났을 때 실행되는 것
+	public void afterEach() {
+		repository.cleareStore();
+	}
+	
+	@Test
+	void 회원가입() {
+		//given
+		Member member = new Member();
+		member.setName("magu");
+		//when
+		Long saveId = memberService.join(member);
+		
+		Member findMember = memberService.findOne(saveId).get();
+		Assertions.assertThat(member.getName()).isEqualTo(findMember.getName());
+		//then
+	}
+	
+	@Test
+	void 중복회원예외() {
+		//GIVEN
+		Member member = new Member();
+		member.setName("magu");
+		
+		Member member2 = new Member();
+		member2.setName("magu");
+		//WHEN
+		memberService.join(member);
+		
+		try {
+			memberService.join(member2);
+			fail();
+		}catch (IllegalStateException e) {
+			Assertions.assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+		}
+		//THEN
+	}
+	
+	@Test
+	void 전체회원찾기() {
+	}
+	
+	@Test
+	void 한명찾기() {
+		
+	}
+
+}

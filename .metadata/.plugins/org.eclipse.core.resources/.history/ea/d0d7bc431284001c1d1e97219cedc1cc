@@ -1,0 +1,30 @@
+package hello.hellospring.repository;
+
+import org.junit.jupiter.api.Test;
+
+class MemoryBoardRepositoryTest {
+
+	MemoryBoardRepository repositroy = new MemoryBoardRepository();
+	
+	@Test
+	void 보드저장확인() {
+		//given
+		Board board = new Board();
+		repositroy.
+		//when
+		
+		//then
+		
+	}
+	
+	@Test
+	void 보드아이디셀렉트확인() {
+	
+	}
+	
+	@Test
+	void 보드모든데이터확인() {
+		
+	}
+
+}

@@ -1,0 +1,27 @@
+package hello.hellospring.service;
+
+
+import java.util.Optional;
+
+import hello.hellospring.domain.Member;
+import hello.hellospring.repository.MemberRepository;
+import hello.hellospring.repository.MemoryMemberRepository;
+
+public class MemberService {
+
+	private final MemberRepository memberRepository = new MemoryMemberRepository();
+	
+	/* 회원가입 */
+	private Long join(Member member) {
+		//같은 이름이 있는 중복 회원 X
+		
+		 memberRepository.findByName(member.getName())
+												.ifPresent(a->{
+													throw new IllegalStateException("이미 존재하느ㅡㄴ 회원입니다.");
+												});
+		
+		memberRepository.save(member);
+		return member.getId();
+		
+	}
+}
