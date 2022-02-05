@@ -1,0 +1,58 @@
+package hello.hellospring.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+import hello.hellospring.domain.OrderInfoVO;
+import hello.hellospring.domain.Orderm;
+import hello.hellospring.domain.PromoCoupon;
+
+class MemoryOrderRepositoryTest {
+
+	MemoryOrderRepository dataSet = new MemoryOrderRepository();
+	
+	
+	@Test
+	void 마현테스트() {
+		//given
+		
+		//하위 뼈대
+		private String promoNo;
+		private int doAmt;
+		private int couponCnt;
+		
+		List<PromoCoupon> orderInfoList = new ArrayList<>();
+		PromoCoupon orderinfo = new PromoCoupon();
+		PromoCoupon orderinfo2 = new PromoCoupon();
+		
+		orderinfo.setCouponCnt(1);
+		orderinfo.setDoAmt(50);
+		orderinfo.setPromoNo("20201010");
+		
+		orderinfo.setCouponCnt(1);
+		orderinfo.setDoAmt(30);
+		orderinfo.setPromoNo("20202020");
+		
+		
+		//중위 뼈대
+		List<OrderInfoVO> orderInfoList = new ArrayList<>();
+		OrderInfoVO orderinfo = new OrderInfoVO();
+		
+		
+		//최상위 뼈대
+		Orderm orderm = new Orderm(); 
+		
+		
+		dataSet.save(null);
+		
+		//when
+		
+		
+		//then
+		
+		
+	}
+	
+}

@@ -1,0 +1,9 @@
+package hello.hellospring.domain;
+
+public class PromoCoupon {
+
+	private String goodsCode;
+	private int doAmt;
+	private 
+	
+}

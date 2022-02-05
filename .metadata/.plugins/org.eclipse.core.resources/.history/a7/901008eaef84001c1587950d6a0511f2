@@ -1,0 +1,16 @@
+package hello.hellospring.repository;
+
+class MemoryOrderRepositoryTest {
+
+	MemoryOrderRepository dataSet = new MemoryOrderRepository();
+	
+	
+	@Test
+	void 마현테스트() {
+		
+		
+		
+	}
+	
+	
+}

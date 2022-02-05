@@ -1,0 +1,8 @@
+package hello.hellospring.domain;
+
+public class PromoCoupon {
+
+	private int doAmt;
+	private int couponCnt;
+	
+}

@@ -18,7 +18,7 @@ class MemoryBoardRepositoryTest {
 	}
 	
 	@Test
-	void º¸µåÀúÀåÈ®ÀÎ() {
+	void í…ŒìŠ¤íŠ¸1() {
 		//given
 		Board board = new Board();
 		board.setContent("himagu");
@@ -35,7 +35,7 @@ class MemoryBoardRepositoryTest {
 	
 	
 	@Test
-	void º¸µå¸ğµçµ¥ÀÌÅÍÈ®ÀÎ() {
+	void í…ŒìŠ¤íŠ¸2() {
 		Board board = new Board();
 		board.setContent("himagu");
 		repositroy.save(board);

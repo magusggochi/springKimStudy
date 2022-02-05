@@ -1,0 +1,24 @@
+package hello.hellospring.repository;
+
+import java.util.HashMap;
+import java.util.Optional;
+
+import hello.hellospring.domain.Orderm;
+
+public class MemoryOrderRepository implements OrderInfoRepository {
+
+	private static HashMap<String, Object> map = new HashMap<>();
+	
+	@Override
+	public Orderm save(Orderm orderm) {
+		map.put("orderm", orderm);
+		return orderm;
+	}
+
+	@Override
+	public Optional<Orderm> findAll() {
+		
+		return map.values();
+	}
+
+}

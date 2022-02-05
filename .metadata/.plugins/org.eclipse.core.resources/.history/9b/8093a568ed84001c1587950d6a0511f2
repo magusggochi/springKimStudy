@@ -1,0 +1,11 @@
+package hello.hellospring.domain;
+
+import java.util.List;
+
+public class Orderm {
+
+	private String goodsCode;
+	
+	private List<PromoCoupon> promoCouponList;
+	
+}

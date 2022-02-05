@@ -1,0 +1,19 @@
+package hello.hellospring.repository;
+
+import java.util.Optional;
+
+import hello.hellospring.domain.Orderm;
+
+public class memoryOrderRepository implements OrderInfoRepository {
+
+	@Override
+	public Orderm save(Orderm orderm) {
+		return null;
+	}
+
+	@Override
+	public Optional<Orderm> findAll() {
+		return null;
+	}
+
+}
