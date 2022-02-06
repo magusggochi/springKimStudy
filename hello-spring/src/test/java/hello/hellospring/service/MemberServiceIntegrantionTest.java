@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
 import hello.hellospring.domain.Member;
@@ -48,7 +49,7 @@ class MemberServiceIntegrantionTest {
 			memberService.join(member2);
 			fail();
 		}catch (IllegalStateException e) {
-			Assertions.assertThat(e.getMessage()).isEqualTo("�̹� �����ϴ� ȸ���Դϴ�.");
+			Assertions.assertThat(e.getMessage()).isEqualTo("안됩니다요");
 		}
 		//THEN
 	}

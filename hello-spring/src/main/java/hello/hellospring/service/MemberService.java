@@ -6,10 +6,12 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 
+@Transactional
 public class MemberService {
 
 	private final MemberRepository memberRepository;
@@ -18,13 +20,11 @@ public class MemberService {
 		this.memberRepository = memberRepository;
 	}
 
-	/* È¸¿ø°¡ÀÔ */
 	public Long join(Member member) {
-		//°°Àº ÀÌ¸§ÀÌ ÀÖ´Â Áßº¹ È¸¿ø X
 		
 		 memberRepository.findByName(member.getName())
 												.ifPresent(a->{
-													throw new IllegalStateException("ÀÌ¹Ì Á¸ÀçÇÏ´Â È¸¿øÀÔ´Ï´Ù.");
+													throw new IllegalStateException("ì•ˆë©ë‹ˆë‹¤ìš”");
 												});
 		
 		memberRepository.save(member);
@@ -32,7 +32,6 @@ public class MemberService {
 		
 	}
 	
-	/* ÀüÃ¼È¸¿ø Á¶È¸ */
 	public List<Member> findMembers(){
 		return memberRepository.findAll();
 	}
